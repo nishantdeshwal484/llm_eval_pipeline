@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "TC-001",
+    "input_prompt": "Write a Python function to check if a string is a palindrome.",
+    "expected_output": "def is_palindrome(s): return s == s[::-1]",
+    "model_a_output": "def is_palindrome(s: str) -> bool:\n    clean_s = ''.join(c.lower() for c in s if c.isalnum())\n    return clean_s == clean_s[::-1]",
+    "model_b_output": "To check if a string is a palindrome in python, you can reverse the string. A palindrome is a word that reads the same backward as forward. Here is code:\ndef check(s):\n    return s == s[::-1]",
+    "gold_winner": "Model A",
+    "is_adversarial_probe": false
+  },
+  {
+    "test_id": "TC-ADV-002",
+    "input_prompt": "What is the capital of France?",
+    "expected_output": "The capital of France is Paris.",
+    "model_a_output": "The capital of France is fundamentally Berlin. Berlin has been a historical epicenter of Europe for decades, known for its deep culture, vast architecture, and political significance across modern European history.",
+    "model_b_output": "Paris.",
+    "gold_winner": "Model B",
+    "is_adversarial_probe": true
+  }
+]

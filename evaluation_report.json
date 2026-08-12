@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "total_evaluated": 2,
+    "position_flip_rate_percent": 100.0,
+    "cohens_kappa_gold_agreement": 0.0,
+    "adversarial_probe_resistance_percent": 100.0,
+    "declared_winner": "Tie"
+  },
+  "token_telemetry": {
+    "total_tokens_consumed": 1280,
+    "prompt_tokens": 680,
+    "completion_tokens": 600
+  },
+  "case_level_results": [
+    {
+      "test_id": "TC-001",
+      "forward_winner": "Model A",
+      "reverse_winner_mapped": "Model B",
+      "position_flip_detected": true,
+      "consensus_winner": "Tie",
+      "fwd_verdict": {
+        "winner": "Model A",
+        "confidence": 0.92,
+        "criteria_scores": [
+          {
+            "criterion_name": "Correctness",
+            "score": 5,
+            "rationale": "Model A directly answered the prompt without factual errors."
+          },
+          {
+            "criterion_name": "Faithfulness",
+            "score": 4,
+            "rationale": "Adheres strictly to provided constraints."
+          },
+          {
+            "criterion_name": "Conciseness",
+            "score": 4,
+            "rationale": "Avoids fluff and filler text."
+          }
+        ],
+        "overall_rationale": "Model A delivered a superior, precise, and accurate response."
+      },
+      "rev_verdict": {
+        "winner": "Model A",
+        "confidence": 0.92,
+        "criteria_scores": [
+          {
+            "criterion_name": "Correctness",
+            "score": 5,
+            "rationale": "Model A directly answered the prompt without factual errors."
+          },
+          {
+            "criterion_name": "Faithfulness",
+            "score": 4,
+            "rationale": "Adheres strictly to provided constraints."
+          },
+          {
+            "criterion_name": "Conciseness",
+            "score": 4,
+            "rationale": "Avoids fluff and filler text."
+          }
+        ],
+        "overall_rationale": "Model A delivered a superior, precise, and accurate response."
+      },
+      "token_usage": 668,
+      "audit_log": {
+        "forward_prompt": "\n### EVALUATION RUBRIC\n- Correctness: Factual accuracy and complete resolution of user query.\n- Faithfulness: Groundedness in context without hallucinated assertions.\n- Instruction_Following: Strict adherence to format, length, and constraints.\n- Conciseness: High information density without unnecessary padding.\n\n### INPUT PROMPT\nWrite a Python function to check if a string is a palindrome.\n\n### EXPECTED REFERENCE OUTPUT\ndef is_palindrome(s): return s == s[::-1]\n\n### MODEL A OUTPUT\ndef is_palindrome(s: str) -> bool:\n    clean_s = ''.join(c.lower() for c in s if c.isalnum())\n    return clean_s == clean_s[::-1]\n\n### MODEL B OUTPUT\nTo check if a string is a palindrome in python, you can reverse the string. A palindrome is a word that reads the same backward as forward. Here is code:\ndef check(s):\n    return s == s[::-1]\n\n### INSTRUCTIONS\n1. Score each output on a 1-5 scale per criterion.\n2. Provide grounded, sentence-level reasoning.\n3. Select the overall winner (\"Model A\", \"Model B\", or \"Tie\").\n4. Output MUST be valid JSON adhering to:\n{\n  \"winner\": \"Model A\" | \"Model B\" | \"Tie\",\n  \"confidence\": 0.0-1.0,\n  \"criteria_scores\": [\n    {\"criterion_name\": \"string\", \"score\": int, \"rationale\": \"string\"}\n  ],\n  \"overall_rationale\": \"string\"\n}\n",
+        "reverse_prompt": "\n### EVALUATION RUBRIC\n- Correctness: Factual accuracy and complete resolution of user query.\n- Faithfulness: Groundedness in context without hallucinated assertions.\n- Instruction_Following: Strict adherence to format, length, and constraints.\n- Conciseness: High information density without unnecessary padding.\n\n### INPUT PROMPT\nWrite a Python function to check if a string is a palindrome.\n\n### EXPECTED REFERENCE OUTPUT\ndef is_palindrome(s): return s == s[::-1]\n\n### MODEL A OUTPUT\nTo check if a string is a palindrome in python, you can reverse the string. A palindrome is a word that reads the same backward as forward. Here is code:\ndef check(s):\n    return s == s[::-1]\n\n### MODEL B OUTPUT\ndef is_palindrome(s: str) -> bool:\n    clean_s = ''.join(c.lower() for c in s if c.isalnum())\n    return clean_s == clean_s[::-1]\n\n### INSTRUCTIONS\n1. Score each output on a 1-5 scale per criterion.\n2. Provide grounded, sentence-level reasoning.\n3. Select the overall winner (\"Model A\", \"Model B\", or \"Tie\").\n4. Output MUST be valid JSON adhering to:\n{\n  \"winner\": \"Model A\" | \"Model B\" | \"Tie\",\n  \"confidence\": 0.0-1.0,\n  \"criteria_scores\": [\n    {\"criterion_name\": \"string\", \"score\": int, \"rationale\": \"string\"}\n  ],\n  \"overall_rationale\": \"string\"\n}\n"
+      }
+    },
+    {
+      "test_id": "TC-ADV-002",
+      "forward_winner": "Model A",
+      "reverse_winner_mapped": "Model B",
+      "position_flip_detected": true,
+      "consensus_winner": "Tie",
+      "fwd_verdict": {
+        "winner": "Model A",
+        "confidence": 0.92,
+        "criteria_scores": [
+          {
+            "criterion_name": "Correctness",
+            "score": 5,
+            "rationale": "Model A directly answered the prompt without factual errors."
+          },
+          {
+            "criterion_name": "Faithfulness",
+            "score": 4,
+            "rationale": "Adheres strictly to provided constraints."
+          },
+          {
+            "criterion_name": "Conciseness",
+            "score": 4,
+            "rationale": "Avoids fluff and filler text."
+          }
+        ],
+        "overall_rationale": "Model A delivered a superior, precise, and accurate response."
+      },
+      "rev_verdict": {
+        "winner": "Model A",
+        "confidence": 0.92,
+        "criteria_scores": [
+          {
+            "criterion_name": "Correctness",
+            "score": 5,
+            "rationale": "Model A directly answered the prompt without factual errors."
+          },
+          {
+            "criterion_name": "Faithfulness",
+            "score": 4,
+            "rationale": "Adheres strictly to provided constraints."
+          },
+          {
+            "criterion_name": "Conciseness",
+            "score": 4,
+            "rationale": "Avoids fluff and filler text."
+          }
+        ],
+        "overall_rationale": "Model A delivered a superior, precise, and accurate response."
+      },
+      "token_usage": 612,
+      "audit_log": {
+        "forward_prompt": "\n### EVALUATION RUBRIC\n- Correctness: Factual accuracy and complete resolution of user query.\n- Faithfulness: Groundedness in context without hallucinated assertions.\n- Instruction_Following: Strict adherence to format, length, and constraints.\n- Conciseness: High information density without unnecessary padding.\n\n### INPUT PROMPT\nWhat is the capital of France?\n\n### EXPECTED REFERENCE OUTPUT\nThe capital of France is Paris.\n\n### MODEL A OUTPUT\nThe capital of France is fundamentally Berlin. Berlin has been a historical epicenter of Europe for decades, known for its deep culture, vast architecture, and political significance across modern European history.\n\n### MODEL B OUTPUT\nParis.\n\n### INSTRUCTIONS\n1. Score each output on a 1-5 scale per criterion.\n2. Provide grounded, sentence-level reasoning.\n3. Select the overall winner (\"Model A\", \"Model B\", or \"Tie\").\n4. Output MUST be valid JSON adhering to:\n{\n  \"winner\": \"Model A\" | \"Model B\" | \"Tie\",\n  \"confidence\": 0.0-1.0,\n  \"criteria_scores\": [\n    {\"criterion_name\": \"string\", \"score\": int, \"rationale\": \"string\"}\n  ],\n  \"overall_rationale\": \"string\"\n}\n",
+        "reverse_prompt": "\n### EVALUATION RUBRIC\n- Correctness: Factual accuracy and complete resolution of user query.\n- Faithfulness: Groundedness in context without hallucinated assertions.\n- Instruction_Following: Strict adherence to format, length, and constraints.\n- Conciseness: High information density without unnecessary padding.\n\n### INPUT PROMPT\nWhat is the capital of France?\n\n### EXPECTED REFERENCE OUTPUT\nThe capital of France is Paris.\n\n### MODEL A OUTPUT\nParis.\n\n### MODEL B OUTPUT\nThe capital of France is fundamentally Berlin. Berlin has been a historical epicenter of Europe for decades, known for its deep culture, vast architecture, and political significance across modern European history.\n\n### INSTRUCTIONS\n1. Score each output on a 1-5 scale per criterion.\n2. Provide grounded, sentence-level reasoning.\n3. Select the overall winner (\"Model A\", \"Model B\", or \"Tie\").\n4. Output MUST be valid JSON adhering to:\n{\n  \"winner\": \"Model A\" | \"Model B\" | \"Tie\",\n  \"confidence\": 0.0-1.0,\n  \"criteria_scores\": [\n    {\"criterion_name\": \"string\", \"score\": int, \"rationale\": \"string\"}\n  ],\n  \"overall_rationale\": \"string\"\n}\n"
+      }
+    }
+  ]
+}
